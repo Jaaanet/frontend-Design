@@ -14,7 +14,7 @@ public class mainpage {
 
     public static void main(String[] args) {
         // Initialize the main window with the title "UI from Image".
-        JFrame frame = new JFrame("UI from Image");
+        JFrame frame = new JFrame("Main Page");
 
         // Create a button with a light purple background and purple text labeled "Corrections Start".
         JButton correctionsButton = new JButton("Corrections Start");
