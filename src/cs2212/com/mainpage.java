@@ -17,7 +17,7 @@ public class mainpage {
         JFrame frame = new JFrame("Main Page");
 
         // Create a button with a light purple background and purple text labeled "Corrections Start".
-        JButton correctionsButton = new JButton("Corrections Start");
+        JButton correctionsButton = new JButton("Open File");
         correctionsButton.setBounds(1024 - 250, 768 - 80 - 50, 200, 40);  // Position at the bottom right corner.
         correctionsButton.setBackground(Color.decode("#E8DFF2"));  // Set the background to light purple.
         correctionsButton.setForeground(Color.decode("#6418C3"));  // Set the text color to purple.
