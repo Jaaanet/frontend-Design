@@ -84,6 +84,7 @@ public class mainpage {
             }
         };
 
+
         dashboardButton = createMenuItem("Dashboard", "G:/javaswing-study/src/cs2212/com/dashboard(3030).png", 140, buttonListener);
         frame.add(dashboardButton);
 
@@ -93,8 +94,31 @@ public class mainpage {
         askHelpButton = createMenuItem("Ask Help", "G:/javaswing-study/src/cs2212/com/askhelp(3030).png", 240, buttonListener);
         frame.add(askHelpButton);
 
-        settingsButton = createMenuItem("Settings", "G:/javaswing-study/src/cs2212/com/setting(3030).png", 290, buttonListener);
+
+        //*******************************************************************************************************************************************
+        // 创建一个名为"Settings"的菜单项，这个菜单项有一个图标和一个点击事件
+        //以及一个监听器对象，用于定义当用户点击这个菜单项时应该执行的操作。
+
+        settingsButton = createMenuItem("Settings", "G:/javaswing-study/src/cs2212/com/setting(3030).png", 290, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setActiveButton(settingsButton);
+                //用户点击这个菜单项时，这个方法会被调用，用于设置settingsButton为当前活跃的按钮。
+                //说白了就是这个方法定义了点这个选项的时候哪个动画，紫色的
+                openSettingsPage();
+                //这个方法负责打开应用程序中的设置页面。这通常会导致界面上显示设置选项或者打开一个新的设置窗口。
+                //如何定义的在后面
+            }
+            //********************************************************************************************************************************************
+        });
+
+
+
         frame.add(settingsButton);
+
+
+
+
 
         JPanel topPanel = new JPanel();
         topPanel.setBounds(0, 0, 1920, 50);
@@ -109,7 +133,17 @@ public class mainpage {
         frame.setVisible(true);
 
         setActiveButton(dashboardButton);
+
     }
+
+
+    private static void openSettingsPage() {
+        new setting_page().setVisible(true);
+    }
+//别忘记定义一个open setting page
+    // 创建一个新的setting_page对象并显示它
+    //这里的setting_page是什么？就是你要打开的那个页面的class，所以我分开写了page
+
 
     private static String readFile(File file) throws IOException {
         StringBuilder fileContent = new StringBuilder();
@@ -138,6 +172,7 @@ public class mainpage {
         button.addActionListener(buttonListener);
         return button;
     }
+
 
     private static void setActiveButton(JButton activeButton) {
         dashboardButton.setForeground(Color.decode("#A5A5A5"));
