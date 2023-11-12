@@ -1,4 +1,3 @@
-
 package cs2212.com;
 import javax.swing.*;
 import java.awt.*;
@@ -6,16 +5,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class setting_page {
-
-    public static void main(String[] args) {
-        // Create the main frame
-        JFrame frame = new JFrame("Setting");
+    private JFrame frame;
+//如果这个页面作为一个页面的子页面是不需要main方法的
+    public setting_page() {
+        frame = new JFrame("Setting");
         frame.setSize(962, 779);
-        frame.setLayout(null);  // Using null layout to position components absolutely
+        frame.setLayout(null);
 
-
-
-        // Setting header
         JLabel settingLabel = new JLabel("Setting");
         settingLabel.setBounds(50, 40, 200, 40);
         settingLabel.setFont(new Font("Segoe UI", Font.BOLD, 34));
@@ -27,21 +23,14 @@ public class setting_page {
         userCustomLabel.setForeground(new Color(0xA5A5A5));
         frame.add(userCustomLabel);
 
-        // Theme 1
         JPanel theme1Panel = new JPanel();
         theme1Panel.setBounds(50, 146, 862, 275);
-        theme1Panel.setBackground(new Color(0, 0, 0, 0x0A));  // Slight transparency
+        theme1Panel.setBackground(new Color(0, 0, 0, 0x0A));
         frame.add(theme1Panel);
 
         JLabel theme1Label = new JLabel("Theme 1");
         theme1Label.setBounds(81, 151, 130, 40);
         theme1Label.setFont(new Font("Segoe UI", Font.BOLD, 32));
-        // Add ActionListener to button
-/*        setThemeButton1.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                frame.dispose();  // Close the window
-            }
-        });*/
         frame.add(theme1Label);
 
         JLabel fontSize1Label = new JLabel("Font size: Middle");
@@ -54,10 +43,9 @@ public class setting_page {
         highlightColor1Label.setFont(new Font("Segoe UI", Font.PLAIN, 20));
         frame.add(highlightColor1Label);
 
-        // Theme 2
         JPanel theme2Panel = new JPanel();
         theme2Panel.setBounds(50, 450, 862, 275);
-        theme2Panel.setBackground(new Color(0, 0, 0, 0x0A));  // Slight transparency
+        theme2Panel.setBackground(new Color(0, 0, 0, 0x0A));
         frame.add(theme2Panel);
 
         JLabel theme2Label = new JLabel("Theme 2");
@@ -75,16 +63,14 @@ public class setting_page {
         highlightColor2Label.setFont(new Font("Segoe UI", Font.PLAIN, 20));
         frame.add(highlightColor2Label);
 
-        // Set theme buttons
         JButton setThemeButton1 = new JButton("Set theme");
         setThemeButton1.setBounds(688, 341, 200, 54);
         setThemeButton1.setFont(new Font("Segoe UI", Font.PLAIN, 32));
         setThemeButton1.setBackground(new Color(0x6418C3));
         setThemeButton1.setForeground(Color.WHITE);
-        // Add ActionListener to button
         setThemeButton1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                frame.dispose();  // Close the window
+                frame.dispose();
             }
         });
         frame.add(setThemeButton1);
@@ -96,18 +82,20 @@ public class setting_page {
         setThemeButton2.setForeground(Color.WHITE);
         setThemeButton2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                frame.dispose();  // Close the window
+                frame.dispose();
             }
         });
         frame.add(setThemeButton2);
 
-        // Main background
         JPanel mainBg = new JPanel();
         mainBg.setBounds(0, 0, 962, 779);
         mainBg.setBackground(new Color(0xF6EEFF));
         frame.add(mainBg);
 
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setVisible(true);
+        frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+    }
+
+    public void setVisible(boolean b) {
+        frame.setVisible(b);
     }
 }
