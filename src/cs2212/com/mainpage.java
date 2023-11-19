@@ -1,3 +1,4 @@
+//中文注释，两个button，frozenmainpage，连接setting
 package cs2212.com;
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
